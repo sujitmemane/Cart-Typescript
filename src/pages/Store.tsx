@@ -1,7 +1,5 @@
-import React from "react";
 import DATA from "../data/items.json";
 import Item from "../components/Item";
-import { ItemType } from "../types/types";
 
 const Store = () => {
   return (

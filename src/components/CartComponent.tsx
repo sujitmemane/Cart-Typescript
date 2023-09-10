@@ -1,4 +1,3 @@
-import React from "react";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import CartItem from "./CartItem";
 import Items from "../data/items.json";

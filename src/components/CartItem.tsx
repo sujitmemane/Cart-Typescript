@@ -1,4 +1,3 @@
-import React from "react";
 import Items from "../data/items.json";
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai";
@@ -50,7 +49,7 @@ const CartItem = ({ item }: { item: CartItemType }) => {
           </button>
         </div>
         <h1 className="text-center font-bold">
-          ₹ {Item?.price * item.quantity}
+          ₹ {(Item?.price || 0) * item.quantity}
         </h1>
         <div
           className="px-12 py-2 bg-[#ff0a54] text-white flex justify-center items-center space-x-2 uppercase font-bold my-3 cursor-pointer"
