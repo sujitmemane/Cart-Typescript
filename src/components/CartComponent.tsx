@@ -14,7 +14,7 @@ const CartComponent = () => {
       ) : (
         <div>
           {cartItems.map((element) => (
-            <CartItem item={element} />
+            <CartItem key={element.id} item={element} />
           ))}
         </div>
       )}

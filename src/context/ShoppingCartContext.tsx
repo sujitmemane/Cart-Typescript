@@ -40,17 +40,21 @@ export function ShoppingCartProvider({
     setCartItems(newCart);
   };
 
-  const decreaseItemQuantity = (id: number) => {
-    let newCart = cartItems?.map((item) => {
-      if (item.id === id && item.quantity > 1) {
-        return { ...item, quantity: item.quantity - 1 };
+  function decreaseItemQuantity(id: number) {
+    setCartItems((currItems) => {
+      if (currItems.find((item) => item.id === id)?.quantity === 1) {
+        return currItems.filter((item) => item.id !== id);
+      } else {
+        return currItems.map((item) => {
+          if (item.id === id) {
+            return { ...item, quantity: item.quantity - 1 };
+          } else {
+            return item;
+          }
+        });
       }
-      return item;
     });
-    newCart = newCart?.filter((item) => item.quantity !== 1);
-
-    setCartItems(newCart);
-  };
+  }
 
   const removeFromCart = (id: number) => {
     const newCart = cartItems?.filter((item) => item.id !== id);
