@@ -1,6 +1,5 @@
 import { useShoppingCart } from "../context/ShoppingCartContext";
 import CartItem from "./CartItem";
-import Items from "../data/items.json";
 
 const CartComponent = () => {
   const { cartItems } = useShoppingCart();
